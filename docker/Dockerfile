@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /code
 
-COPY uv.lock uv.json /code/
+COPY uv.lock pyproject.toml /code/
 RUN pip install uv && uv sync
 
 COPY . /code
