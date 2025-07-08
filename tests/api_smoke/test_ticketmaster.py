@@ -1,9 +1,9 @@
-import os
 import httpx
+from app.config import settings
 
 
 def test_ticketmaster():
-    key = os.getenv("TICKETMASTER_KEY")
+    key = settings.TICKETMASTER_KEY
     assert key, "Missing API key"
     r = httpx.get(
         "https://app.ticketmaster.com/discovery/v2/events",
